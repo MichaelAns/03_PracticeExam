@@ -30,6 +30,12 @@ namespace ThePracticeExam.Program
                     carControl[i] = car;
                 }
 
+                Console.WriteLine("\nBefore the sorting:");
+                Console.WriteLine(carControl.Print());
+
+                carControl.Sort();
+
+                Console.WriteLine("\nAfter the sorting:");
                 Console.WriteLine(carControl.Print());
 
                 Console.WriteLine(carControl.Save());
