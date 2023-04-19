@@ -15,7 +15,7 @@ namespace ThePracticeExam.Program
 
                 for (int i = 0; i < length; i++)
                 {
-                    Console.WriteLine($"Car {i+1}:");
+                    Console.WriteLine($"\nCar {i+1}:");
                     var car = new Car();
 
                     Console.Write("Enter a model: ");
@@ -27,8 +27,12 @@ namespace ThePracticeExam.Program
                     Console.Write("Enter a power: ");
                     car.Power = int.Parse(Console.ReadLine());
 
-
+                    carControl[i] = car;
                 }
+
+                Console.WriteLine(carControl.Print());
+
+                Console.WriteLine(carControl.Save());
             }
             catch (Exception exc)
             {

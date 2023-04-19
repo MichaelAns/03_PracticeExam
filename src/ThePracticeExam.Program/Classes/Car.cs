@@ -8,7 +8,7 @@
 
         public override string ToString()
         {            
-            return $"{Model} {Price} {Power}";
+            return $"{Model} {Price} {Power}\n";
         }
     }
 }

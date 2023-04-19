@@ -1,4 +1,7 @@
-﻿namespace ThePracticeExam.Program.Classes
+﻿using System;
+using System.IO;
+
+namespace ThePracticeExam.Program.Classes
 {
     public class CarControl
     {
@@ -49,12 +52,24 @@
             }
         }
 
-        public void Print()
+        public string Print()
         {
+            string result = String.Empty;
             foreach (var a in _cars) 
             {
-                System.Console.WriteLine(a);
+                result = $"{result}{a}";
             }
+            return result;
+        }
+
+        public string Save()
+        {
+            string path = $"{Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent}/cars.txt";
+            string cars = this.Print();
+
+            File.WriteAllText(path, cars);
+
+            return $"The file has been saved in {path}";
         }
     }
 }
